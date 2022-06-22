@@ -1,0 +1,20 @@
+<!-- Include header -->
+	<%- include('include/_header') %>
+<!-- /Include header -->
+
+			<!-- Start your content here. -->
+
+			<img src="/img/DeltaMap.jpg" alt="">
+
+			
+			<% for (let i = 0; i <species.length; i++ ) { %>
+				<ul>
+					<li><a href="/species/<%= species[i].name %>"><%= species[i].name %></a></li>
+				</ul>		
+			<% } %>
+			 <!-- End content area. -->
+
+<!-- Include footer -->
+	<%- include('include/_footer') %>
+<!-- /Include footer -->
+

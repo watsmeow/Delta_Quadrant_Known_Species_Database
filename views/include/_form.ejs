@@ -1,0 +1,44 @@
+			<!-- Form for adding an episode to the database -->
+			<form action="/api/v1/episodes/<%= encounter %>" method="POST" id="add_encounter">
+				<div>
+					<!-- episode title -->
+					<div>
+						<label for="title">Title:</label>
+						<input type="text" name="title" value="" placeholder="Episode name" required>
+						<input type="text" name="speciesName" value="<%= encounter %>" required>
+
+					</div>
+					<!-- season -->
+					<div>
+						<label for="season">Year of Encounter (episode season):</label>
+						<select name="season" id="season" required>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+						</select>
+					</div>
+					<!-- episode number -->
+					<div>
+						<label for="episodeNumber">Encounter ID (episode number):</label>
+						<input type="number" name="episodeNumber" placeholder="Episode number (must be numeric)" value="">
+					</div>
+					<!-- episode summary -->
+					<div>
+						<label for="summary">Encounter Summary:</label>
+						<input type="text" name="summary" value="" placeholder="Brief summary of encounter" required>
+					</div>
+					<div>
+						<label for="image">Encounter Image:</label>
+							<input type="text" name="image" value="" placeholder="url" required>
+					</div>
+					</div>
+
+					<div>
+						<button type="submit" class="">Save</button>
+					</div>
+				</div>
+			</form>
