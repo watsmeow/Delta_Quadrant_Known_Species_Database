@@ -1,0 +1,47 @@
+<!-- Include header -->
+	<%- include('include/_header') %>
+<!-- /Include header -->
+
+			<!-- Start your content here. -->
+
+			<h1>Delta Quadrant:<br>Known Species Database</h1>
+			
+			<div class="lcars-text-bar the-end">
+				<span id="species-name">Species name here</span>
+			</div>
+
+			<!-- Species information -->
+			<div class="lcars-text-bar">
+				<span>Visual Representation:</span>
+			</div>
+			<img src="" alt="species-image" id="species-image">
+
+			<div class="lcars-text-bar">
+				<span>Homeworld:</span>
+			</div>
+			<p id="homeworld"></p>
+
+			<div class="lcars-text-bar">
+				<span>Biology:</span>
+			</div>
+			<p id="biology"></p>
+
+			<div class="lcars-text-bar">
+				<span>Culture:</span>
+			</div>
+			<p id="culture"></p>
+
+			<div class="lcars-text-bar">
+				<span>Technology:</span>
+			</div>
+			<p id="technology"></p>
+
+			<!-- Include episodes -->
+				<%- include('include/_encounters') %>
+			<!-- /Include epidoseds -->
+			
+			 <!-- End content area. -->
+
+<!-- Include footer -->
+	<%- include('include/_footer') %>
+<!-- /Include footer -->
