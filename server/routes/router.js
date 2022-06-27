@@ -4,6 +4,7 @@ const route = express.Router()
 
 const services = require('../services/render')
 const controller = require('../controller/controller')
+const store = require('../middleware/multer')
 
 //Root route to RENDER intro page
 route.get('/', services.intro)
@@ -29,6 +30,6 @@ route.get('/api/v1/episodes/:speciesName', controller.loadEpisodes)
 //Route to RENDER add an episode page
 route.get('/encounter/:speciesName', services.addEpisode)
 //API POST to add an episode to the database
-route.post('/api/v1/episodes/:speciesName', controller.addEpisode)
+route.post('/api/v1/episodes/:speciesName', store.single('file'), controller.addEpisode)
 
 module.exports = route

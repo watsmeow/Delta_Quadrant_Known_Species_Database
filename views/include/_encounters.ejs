@@ -9,10 +9,11 @@
 <div class="slideshow-container">
 
     <% for (let i = 0; i <episodes.length; i++ ) { %>
+      <% let picture = 'data:' + episodes[i].image.contentType + ';base64,' + episodes[i].image.imageBase64 %>
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
       <div class="numbertext"><%= i + 1 %> / <%= episodes.length %></div>
-      <img src="<%= episodes[i].image %>" style="width:100%">
+      <img src="<%= picture %>" style="width:100%">
       <div class="text">
         <h5 id="title"><%= episodes[i].title %></h5>
         <h5 id="season"><%= episodes[i].season %></h5>
@@ -41,8 +42,5 @@
 
 
 <div class="buttons">
-  <% if (episodes[0].speciesName == null) {
-    console.log(episodes[0])
-  } %>
     <a href="/encounter/<%= episodes[0].speciesName %>" class="bluey">Add Encounter</a>
 </div>

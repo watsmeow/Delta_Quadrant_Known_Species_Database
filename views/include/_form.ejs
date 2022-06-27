@@ -1,5 +1,5 @@
 			<!-- Form for adding an episode to the database -->
-			<form action="/api/v1/episodes/<%= encounter %>" method="POST" id="add_encounter">
+			<form action="/api/v1/episodes/<%= encounter %>" method="POST" id="add_encounter" enctype="multipart/form-data">
 				<div>
 					<!-- episode title -->
 					<div>
@@ -33,7 +33,7 @@
 					</div>
 					<div>
 						<label for="image">Encounter Image:</label>
-							<input type="text" name="image" value="" placeholder="url" required>
+							<input type="file" name="file" id="file">
 					</div>
 					</div>
 
