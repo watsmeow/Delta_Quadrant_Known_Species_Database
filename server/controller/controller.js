@@ -1,6 +1,6 @@
-
 const { traceDeprecation } = require('process')
 const {encounter, species}  = require('../model/model')
+const fs = require('fs')
 
 //API GET to load all species data into map page
 exports.loadAllSpecies = (req, res) => {
@@ -59,13 +59,17 @@ exports.loadEpisodes = (req, res) => {
     }
 }
 
+//API POST new encounter to the database
 exports.addEpisode = (req, res) => {
-    console.log(req.body)
     //need to validate request
     if(!req.body){
         res.status(400).send({ message : "Species upload must contain data."})
         return
     }
+
+    const image = req.file
+    let img = fs.readFileSync(image.path)
+    encode_image = img.toString('base64')
 
     //new episode
     const episode = new encounter({
@@ -74,7 +78,11 @@ exports.addEpisode = (req, res) => {
         season: req.body.season,
         episodeNumber: req.body.episodeNumber,
         summary: req.body.summary,
-        image: req.body.image,
+        image: {
+            filename: image.originalname,
+            contentType: image.mimetype,
+            imageBase64: encode_image
+        }
     })
 
     //save episode to database

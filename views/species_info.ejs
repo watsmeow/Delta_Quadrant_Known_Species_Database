@@ -5,36 +5,38 @@
 			<!-- Start your content here. -->
 
 			<h1>Delta Quadrant:<br>Known Species Database</h1>
-			
-			<div class="lcars-text-bar the-end">
-				<span id="species-name">Species name here</span>
-			</div>
 
 			<!-- Species information -->
-			<div class="lcars-text-bar">
-				<span>Visual Representation:</span>
+			<div class="lcars-text-bar the-end">
+				<span id="species-name"><%= species[0].name %></span>
 			</div>
-			<img src="" alt="species-image" id="species-image">
+
+			<% let speciesPicture = 'data:' + species[0].image.contentType + ';base64,' + species[0].image.imageBase64 %>
 
 			<div class="lcars-text-bar">
-				<span>Homeworld:</span>
+				<span>Species Image</span>
 			</div>
-			<p id="homeworld"></p>
+			<img src="<%= speciesPicture %>" alt="species-image" id="species-image">
+
+			<div class="lcars-text-bar">
+				<span>Homeworld:</span>			
+			</div>
+			<p id="homeworld"><%= species[0].homeworld %></p>
 
 			<div class="lcars-text-bar">
 				<span>Biology:</span>
 			</div>
-			<p id="biology"></p>
+			<p id="biology"><%= species[0].biology %></p>
 
 			<div class="lcars-text-bar">
 				<span>Culture:</span>
 			</div>
-			<p id="culture"></p>
+			<p id="culture"><%= species[0].culture %></p>
 
 			<div class="lcars-text-bar">
 				<span>Technology:</span>
 			</div>
-			<p id="technology"></p>
+			<p id="technology"><%= species[0].technology %></p>
 
 			<!-- Include episodes -->
 				<%- include('include/_encounters') %>

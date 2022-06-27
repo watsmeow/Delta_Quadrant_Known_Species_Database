@@ -15,8 +15,19 @@ let speciesSchema = new mongoose.Schema({
     culture: String,
     technology: String, 
     image: {
-        type: String,
-        require: true
+        filename: {
+            type: String,
+            unique: true, 
+            require: true
+        },
+        contentType: {
+            type: String, 
+            require: true,
+        }, 
+        imageBase64: {
+            type: String, 
+            require: true
+        }
     }
 })
 
@@ -45,8 +56,19 @@ let episodeSchema = new mongoose.Schema({
         unique: true
     },
     image: {
-        type: String,
-        //require: true
+        filename: {
+            type: String,
+            unique: true, 
+            require: true
+        },
+        contentType: {
+            type: String, 
+            require: true,
+        }, 
+        imageBase64: {
+            type: String, 
+            require: true
+        }
     }
 })
 
