@@ -1,3 +1,5 @@
+const { species } = require("../../server/model/model");
+
 document.addEventListener("touchstart", function() {},false);
 
 $(window).scroll(function() {
@@ -53,3 +55,19 @@ function showSlides(n) {
 $('#_form').submit(function(event) {
   alert("Encounter successfully added to database.")
 })
+
+
+function changeGlobal(speciesName, speciesList) {
+  speciesList = JSON.parse(speciesList)
+  console.log(speciesList)
+  for (let i = 0; i < speciesList.length; i++) {
+    if (speciesList[i].name == speciesName) {
+
+      let speciesPicture = 'data:' + speciesList[i].image.contentType + ';base64,' + speciesList[i].image.imageBase64
+
+      document.getElementById('popUpHeading').innerText = speciesList[i].name;
+      document.getElementById('popUpHomeworld').innerText = speciesList[i].homeworld;
+      document.getElementById('popUpImage').src = speciesPicture
+    }
+  }
+}
