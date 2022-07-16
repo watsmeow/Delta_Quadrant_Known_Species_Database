@@ -1,0 +1,49 @@
+
+<div id="container">			
+	<img src="/img/stars.jpg" alt="" id="map-background">
+
+     <!-- Haakonian Order -->
+     <a class="species-link" href="#popup1">
+        <div class="map-button" id="haakonian-order">
+            <p>Haakonian Order</p>
+       </div>
+   </a>
+    <!-- end Haakonian Order -->
+    <!-- Kazon -->
+    <a class="species-link" href="#popup1">
+        <div class="map-button" id="kazon">
+            <p>Kazon</p>
+        </div>
+    </a>
+    <!-- end Kazon -->
+    <!-- The Borg -->
+		<a class="species-link" href="#popup1" onclick="changeGlobal('Borg', '<%= JSON.stringify(species) %>')">
+            <div class="map-button" id="the-borg">
+                <p>Borg Collective</p>
+            </div>
+        </a>
+	<!-- end The Borg -->
+
+	<div id="popup1" class="overlay">
+		<div class="popup">
+			<h2 id="popUpHeading"></h2>
+			<a class="close" href="#">&times;</a>
+			<div class="inner-content">
+    
+            
+    
+                <div class="lcars-text-bar">
+                    <span>Species Image</span>
+                </div>
+                <img src="" alt="species-image" id="popUpImage">
+    
+                <div class="lcars-text-bar">
+                    <span >Homeworld:</span>			
+                </div>
+                <p id="popUpHomeworld"></p>
+
+
+			</div>
+		</div>
+	</div>
+</div>
