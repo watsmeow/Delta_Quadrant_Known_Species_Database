@@ -3,26 +3,47 @@
 	<img src="/img/stars.jpg" alt="" id="map-background">
 
      <!-- Haakonian Order -->
-     <a class="species-link" href="#popup1">
-        <div class="map-button" id="haakonian-order">
+     <a class="species-link" href="#popup1" onclick="changeGlobal('Haakonian', '<%= JSON.stringify(species) %>')">        <div class="map-button" id="haakonian-order">
             <p>Haakonian Order</p>
        </div>
    </a>
     <!-- end Haakonian Order -->
     <!-- Kazon -->
-    <a class="species-link" href="#popup1">
+    <a class="species-link" href="#popup1" onclick="changeGlobal('Kazon', '<%= JSON.stringify(species) %>')">
         <div class="map-button" id="kazon">
             <p>Kazon</p>
         </div>
     </a>
     <!-- end Kazon -->
+    <!-- The Vidiian -->
+    <a class="species-link" href="#popup1" onclick="changeGlobal('Vidiian', '<%= JSON.stringify(species) %>')">
+        <div class="map-button" id="vidiian">
+            <p>Vidiian Sodality</p>
+        </div>
+    </a>
+	<!-- end Vidiian -->
     <!-- The Borg -->
-		<a class="species-link" href="#popup1" onclick="changeGlobal('Borg', '<%= JSON.stringify(species) %>')">
-            <div class="map-button" id="the-borg">
-                <p>Borg Collective</p>
-            </div>
-        </a>
+    <a class="species-link" href="#popup1" onclick="changeGlobal('Borg', '<%= JSON.stringify(species) %>')">
+        <div class="map-button" id="the-borg">
+            <p>Borg Collective</p>
+        </div>
+    </a>
 	<!-- end The Borg -->
+    <!-- The Swarm -->
+    <a class="species-link" href="#popup1" onclick="changeGlobal('Swarm', '<%= JSON.stringify(species) %>')">
+        <div class="map-button" id="swarm">
+            <p>The Swarm</p>
+        </div>
+    </a>
+	<!-- end The Swarm -->
+    <!-- Vori -->
+    <a class="species-link" href="#popup1" onclick="changeGlobal('Vori', '<%= JSON.stringify(species) %>')">
+        <div class="map-button" id="vori">
+            <p>Vori</p>
+        </div>
+    </a>
+	<!-- end Nekrit Expanse -->
+
 
 	<div id="popup1" class="overlay">
 		<div class="popup">
@@ -42,6 +63,9 @@
                 </div>
                 <p id="popUpHomeworld"></p>
 
+                <div class="buttons">
+                    <a href="" class="bluey" id="popUpLink">View Full Information</a>
+                </div>
 
 			</div>
 		</div>
