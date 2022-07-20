@@ -68,6 +68,7 @@ function changeGlobal(speciesName, speciesList) {
       document.getElementById('popUpHeading').innerText = speciesList[i].name;
       document.getElementById('popUpHomeworld').innerText = speciesList[i].homeworld;
       document.getElementById('popUpImage').src = speciesPicture
+      document.getElementById('popUpLink').href = `/species/${speciesName}`
     }
   }
 }

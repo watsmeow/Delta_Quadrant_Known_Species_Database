@@ -1937,7 +1937,7 @@ footer::after {
   overflow-y: scroll;
 }
 
-#popup-species-image {
+#popUpImage {
     max-width: 200px;
 }
 
@@ -1958,22 +1958,8 @@ footer::after {
 /*HAAKONIAN ORDER*/
 
 #haakonian-order {
-    top: 5%;
-    right: 10%;
-    width: 15%;
-    height: 15%;
-    border: 2px solid #EBAE95;
-}
-
-#haakonian-order:hover {
-    background: rgba(235, 174, 149, 0.2);
-}
-
-/*HAAKONIAN ORDER*/
-
-#haakonian-order {
-    top: 5%;
-    right: 10%;
+    top: 3%;
+    right: 3%;
     width: 10%;
     height: 10%;
     border: 2px solid #EBAE95;
@@ -1986,8 +1972,8 @@ footer::after {
 /*KAZON*/
 
 #kazon {
-    top: 10%;
-    right: 20%;
+    top: 8%;
+    right: 5%;
     width: 15%;
     height: 15%;
     background: rgba(119, 136, 255, 0.5);
@@ -1995,4 +1981,46 @@ footer::after {
 
 #kazon:hover {
     background: rgba(119, 136, 255, 0.8);
+}
+
+/*VIDIIAN*/
+
+#vidiian {
+  top: 5%;
+  right: 10%;
+  width: 10%;
+  height: 10%;
+  background: rgba(119, 136, 255, 0.5);
+}
+
+#vidiian:hover {
+  background: rgba(119, 136, 255, 0.8);
+}
+
+/*THE SWARM*/
+
+#swarm {
+  top: 15%;
+  right: 25%;
+  width: 5%;
+  height: 5%;
+  background: rgba(119, 136, 255, 0.5);
+}
+
+#swarm:hover {
+  background: rgba(119, 136, 255, 0.8);
+}
+
+/*VORI*/
+
+#vori{
+  top: 20%;
+  right: 18%;
+  width: 3%;
+  height: 3%;
+  background: rgba(119, 136, 255, 0.5);
+}
+
+#vori:hover {
+  background: rgba(119, 136, 255, 0.8);
 }
