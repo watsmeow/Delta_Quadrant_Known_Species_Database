@@ -2024,3 +2024,17 @@ footer::after {
 #vori:hover {
   background: rgba(119, 136, 255, 0.8);
 }
+
+/*B'OMAR*/
+
+#bomar{
+  top: 15%;
+  right: 20%;
+  width: 3%;
+  height: 3%;
+  background: rgba(119, 136, 255, 0.5);
+}
+
+#bomar:hover {
+  background: rgba(119, 136, 255, 0.8);
+}
