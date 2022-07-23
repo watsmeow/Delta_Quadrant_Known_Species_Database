@@ -1854,12 +1854,20 @@ footer::after {
   position: relative;
   width: fit-content;
   height: fit-content;
+  max-width: 1050px;
+  max-height: 1050px;
+  min-width: 200px;
+  min-height: 200px;
 }
 
-#map-background {
-  width: 1200px;
-  height: auto;
+@media only screen and (max-width: 600px) {
+  #container {
+    width: 400px;
+    height: 400px;
+  }
 }
+
+
 
 .species-link {
   height: fit-content;
@@ -1873,7 +1881,7 @@ footer::after {
   justify-content: center;
   font-size: 1vw;
   padding: 1%;
-  color: #fff;
+  color: white;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   text-decoration: none;
@@ -1881,7 +1889,15 @@ footer::after {
   transition: all 0.3s ease-out;
   position: absolute;
   text-align: center;
+  text-transform: uppercase;
 }
+
+@media only screen and (max-width: 600px) {
+  .map-button {
+    font-size: 2vw;
+  }
+}
+
 
 /*darkens the background when popup is open*/
 .overlay {
@@ -1894,6 +1910,7 @@ footer::after {
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+  z-index: 2;
 }
 
 .overlay:target {
@@ -1907,19 +1924,22 @@ footer::after {
   background: black;
   border-radius: 5px;
   width: 50%;
-  height: fit-content;
+  height: 90%;
   position: relative;
   transition: all 5s ease-in-out;
+
 }
 
 .inner-content {
   background-color: black;
   color: black;
+
 }
 
 .popup h2 {
   margin-top: 0;
   color: #EAAD59;
+
 }
 
 .popup .close {
@@ -1941,81 +1961,142 @@ footer::after {
     max-width: 200px;
 }
 
+
+/*Diamond class for species without territories*/
+.diamond {
+  border-radius: 0;
+  transform:rotate(45deg);
+  background: rgba(188, 96, 42, 0.8);
+  color: white;
+  width: 2%;
+  height: 2%;
+  z-index: 1;
+}
+
+.diamond > p {
+  transform:rotate(-45deg);
+}
+
+.diamond:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #E37E31;
+}
+
+/*OCAMPA*/
+
+#ocampa {
+  top: 13%;
+  right: 13%;
+  z-index: 1;
+}
+
+/*CARETAKER*/
+
+#caretaker {
+  top: 12%;
+  right: 8%;
+  z-index: 2;
+}
+
+/*BIOPLASMIC ORGANISM*/
+
+#bioplasmic {
+  top: 65%;
+  right: 88%;
+  z-index: 1;
+}
+
+/*VAADWAUR*/
+
+#vaadwaur {
+  top: 77%;
+  right: 83%;
+  z-index: 1;
+}
+
+/*BRUNALI*/
+
+#brunali {
+  top: 95%;
+  right: 75%;
+  z-index: 1;
+}
+
 /*THE BORG*/
 
 #the-borg {
-    top: 60%;
-    right: 10%;
-    width: 30%;
-    height: 30%;
-    border: 2px solid #a2e576;
+    top: 40%;
+    left: 30%;
+    width: 70%;
+    height: 70%;
+    background: rgba(162, 229, 118, 0.4);
 }
 
 #the-borg:hover {
-    background: rgba(162, 229, 118, 0.2);
+    background: rgba(162, 229, 118, 0.6);
 }
 
 /*HAAKONIAN ORDER*/
 
 #haakonian-order {
-    top: 3%;
-    right: 3%;
-    width: 10%;
-    height: 10%;
-    border: 2px solid #EBAE95;
+    top: 2%;
+    right: 2%;
+    width: 8%;
+    height: 8%;
+    background: rgba(235, 174, 149, 0.4);
 }
 
 #haakonian-order:hover {
-    background: rgba(235, 174, 149, 0.2);
+    background: rgba(235, 174, 149, 0.6);
 }
 
 /*KAZON*/
 
 #kazon {
-    top: 8%;
-    right: 5%;
+    top: 10%;
+    right: 2%;
     width: 15%;
     height: 15%;
-    background: rgba(119, 136, 255, 0.5);
+    background: rgba(46, 47, 228, 0.4);
 }
 
 #kazon:hover {
-    background: rgba(119, 136, 255, 0.8);
+    background: rgba(46, 47, 228, 0.6);
 }
 
 /*VIDIIAN*/
 
 #vidiian {
-  top: 5%;
-  right: 10%;
+  top: 2%;
+  right: 11%;
   width: 10%;
   height: 10%;
-  background: rgba(119, 136, 255, 0.5);
+  background: rgba(227, 126, 49, 0.4);
 }
 
 #vidiian:hover {
-  background: rgba(119, 136, 255, 0.8);
+  background: rgba(227, 126, 49, 0.6);
 }
 
 /*THE SWARM*/
 
 #swarm {
-  top: 15%;
-  right: 25%;
+  top: 12%;
+  right: 17%;
   width: 5%;
   height: 5%;
-  background: rgba(119, 136, 255, 0.5);
+  background: rgba(76, 40, 82, 0.5);
 }
 
 #swarm:hover {
-  background: rgba(119, 136, 255, 0.8);
+  background: rgba(76, 40, 82, 0.8);
 }
 
 /*VORI*/
 
 #vori{
-  top: 20%;
-  right: 18%;
+  top: 18%;
+  right: 23%;
   width: 3%;
   height: 3%;
   background: rgba(119, 136, 255, 0.5);
@@ -2029,12 +2110,155 @@ footer::after {
 
 #bomar{
   top: 15%;
-  right: 20%;
-  width: 3%;
-  height: 3%;
-  background: rgba(119, 136, 255, 0.5);
+  right: 25%;
+  width: 5%;
+  height: 5%;
+  background: rgba(180, 252, 254, 0.5);
 }
 
 #bomar:hover {
-  background: rgba(119, 136, 255, 0.8);
+  background: rgba(180, 252, 254, 0.8);
+}
+
+/*ZAHL COLONIES*/
+
+#zahl{
+  top: 25%;
+  right: 15%;
+  width: 15%;
+  height: 15%;
+  background: rgba(234, 173, 89, 0.5);
+}
+
+#zahl:hover {
+  background: rgba(234, 173, 89, 0.8);
+}
+
+/*KRENIM EMPERIUM*/
+
+#krenim{
+  top: 20%;
+  right: 30%;
+  width: 18%;
+  height: 18%;
+  background: rgba(192, 144, 248, 0.5);
+}
+
+#krenim:hover {
+  background: rgba(192, 144, 248, 0.8);
+}
+
+/*RILNAR SECT*/
+
+#rilnar{
+  top: 7%;
+  right: 38%;
+  width: 13%;
+  height: 13%;
+  background: rgba(194, 81, 74, 0.5);
+}
+
+#rilnar:hover {
+  background: rgba(194, 81, 74, 0.8);
+}
+
+/*HIROGEN*/
+
+#hirogen{
+  top: 25%;
+  right: 50%;
+  width: 22%;
+  height: 22%;
+  background: rgba(177, 55, 57, 0.5);
+}
+
+#hirogen:hover {
+  background: rgba(177, 55, 57, 0.8);
+}
+
+/*MALON*/
+
+#malon{
+  top: 48%;
+  right: 60%;
+  width: 5%;
+  height: 5%;
+  background: rgba(46, 47, 228, 0.4);
+  z-index: 1;
+}
+
+#malon:hover {
+  background: rgba(46, 47, 228, 0.8);
+}
+
+/*THE VOID*/
+
+#void{
+  top: 43%;
+  right: 63%;
+  width: 20%;
+  height: 20%;
+  background: rgba(50, 50, 50, 0.4);
+}
+
+#void:hover {
+  background: rgba(1, 1, 1, 1);
+  z-index: 2;
+}
+
+/*DEVORE EMPERIUM*/
+
+#devore{
+  top: 63%;
+  right: 70%;
+  width: 12%;
+  height: 12%;
+  background: rgba(180, 252, 254, 0.4);
+}
+
+#devore:hover {
+  background: rgba(180, 252, 254, 0.8);
+}
+
+/*BRENARI*/
+
+#brenari{
+  top: 65%;
+  right: 70%;
+  width: 2%;
+  height: 2%;
+  background: rgba(192, 144, 248, 0.7);
+  z-index: 1;
+}
+
+#brenari:hover {
+  background: rgba(192, 144, 248, 0.9);
+}
+
+/*THE HEIRARCHY*/
+
+#heirarchy {
+  top: 76%;
+  right: 70%;
+  width: 15%;
+  height: 15%;
+  background: rgba(235, 174, 149, 0.4);
+}
+
+#heirarchy:hover {
+  background: rgba(235, 174, 149, 0.8);
+}
+
+/*QUARRAN WORKFORCE*/
+
+#quarran {
+  top: 94%;
+  right: 65%;
+  width: 12%;
+  height: 12%;
+  background: rgba(46, 47, 228, 0.4);
+}
+
+#quarran:hover {
+  background: rgba(46, 47, 228, 0.8);
 }
