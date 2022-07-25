@@ -10,10 +10,14 @@ exports.intro = (req, res) => {
 
 //renders the interactive map page
 exports.loadAllSpecies = (req, res) => {
+    function replacer(key, value) {
+        return value.replace(/[^\w\s]/gi, '');
+      }
+
     axios.get(`http://localhost:4747/api/v1/species`)
         .then((response) => {
             //console.log(response.data)
-            res.render('database_map', { species: response.data })
+            res.render('database_map', { species: JSON.stringify(response.data).replace(/'/g, '\\u0027').replace(/\n/g, '<br \>') })
         })
         .catch(err => {
             res.send(err)
