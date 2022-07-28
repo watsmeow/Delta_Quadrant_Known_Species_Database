@@ -17,7 +17,7 @@ exports.loadAllSpecies = (req, res) => {
     axios.get(`http://localhost:4747/api/v1/species`)
         .then((response) => {
             //console.log(response.data)
-            res.render('database_map', { species: JSON.stringify(response.data).replace(/'/g, '\\u0027').replace(/\n/g, '<br \>') })
+            res.render('database_map', { species: JSON.stringify(response.data).replace(/'/g, '\\u0027') })
         })
         .catch(err => {
             res.send(err)

@@ -7,10 +7,6 @@ exports.loadAllSpecies = (req, res) => {
     species.find()
         .then(aliens => {
             for (let i = 0; i < aliens.length; i++) {
-                console.log(JSON.stringify(aliens[i].biology))
-                console.log(JSON.stringify(aliens[i].culture))
-                console.log(JSON.stringify(aliens[i].technology))
-               // console.log(JSON.stringify(aliens[i]))
             }
             res.send(aliens)
         })
