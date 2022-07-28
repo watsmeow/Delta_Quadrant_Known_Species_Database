@@ -1852,12 +1852,18 @@ footer::after {
 
 #container {
   position: relative;
-  width: fit-content;
-  height: fit-content;
+  width: 1050px;
+  height: 1050px;
+  background: url(../img/starsbg.JPG) no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#map-background {
   max-width: 1050px;
   max-height: 1050px;
-  min-width: 200px;
-  min-height: 200px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1990,9 +1996,9 @@ footer::after {
   z-index: 1;
 }
 
-/*CARETAKER*/
+/*NACENE*/
 
-#caretaker {
+#nacene {
   top: 12%;
   right: 8%;
   z-index: 2;
@@ -2003,6 +2009,14 @@ footer::after {
 #bioplasmic {
   top: 65%;
   right: 88%;
+  z-index: 1;
+}
+
+/*8472*/
+
+#eightfourseventwo {
+  top: 13%;
+  right: 25%;
   z-index: 1;
 }
 
@@ -2017,7 +2031,15 @@ footer::after {
 /*BRUNALI*/
 
 #brunali {
-  top: 95%;
+  top: 92%;
+  right: 75%;
+  z-index: 1;
+}
+
+/*BRUNALI*/
+
+#gowron {
+  top: 40%;
   right: 75%;
   z-index: 1;
 }
@@ -2026,9 +2048,9 @@ footer::after {
 
 #the-borg {
     top: 40%;
-    left: 30%;
-    width: 70%;
-    height: 70%;
+    left: 35%;
+    width: 60%;
+    height: 60%;
     background: rgba(162, 229, 118, 0.4);
 }
 
@@ -2106,11 +2128,25 @@ footer::after {
   background: rgba(119, 136, 255, 0.8);
 }
 
+/*KRADIN*/  
+
+#kradin{
+  top: 20%;
+  right: 22%;
+  width: 3%;
+  height: 3%;
+  background: rgba(119, 136, 255, 0.5);
+}
+
+#kradin:hover {
+  background: rgba(119, 136, 255, 0.8);
+}
+
 /*B'OMAR*/
 
 #bomar{
   top: 15%;
-  right: 25%;
+  right: 28%;
   width: 5%;
   height: 5%;
   background: rgba(180, 252, 254, 0.5);
@@ -2237,7 +2273,7 @@ footer::after {
 
 /*THE HEIRARCHY*/
 
-#heirarchy {
+#hierarchy {
   top: 76%;
   right: 70%;
   width: 15%;
@@ -2245,20 +2281,20 @@ footer::after {
   background: rgba(235, 174, 149, 0.4);
 }
 
-#heirarchy:hover {
+#hierarchy:hover {
   background: rgba(235, 174, 149, 0.8);
 }
 
 /*QUARRAN WORKFORCE*/
 
-#quarran {
-  top: 94%;
+#quarren {
+  top: 88%;
   right: 65%;
   width: 12%;
   height: 12%;
   background: rgba(46, 47, 228, 0.4);
 }
 
-#quarran:hover {
+#quarren:hover {
   background: rgba(46, 47, 228, 0.8);
 }

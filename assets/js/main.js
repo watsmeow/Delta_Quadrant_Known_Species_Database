@@ -58,10 +58,7 @@ $('#_form').submit(function(event) {
 
 
 function changeGlobal(speciesName, speciesList) {
-  console.log(speciesName)
-  console.log(speciesList)
   speciesList = JSON.parse(speciesList)
-  console.log(speciesList)
   for (let i = 0; i < speciesList.length; i++) {
     if (speciesList[i].name == speciesName) {
 
