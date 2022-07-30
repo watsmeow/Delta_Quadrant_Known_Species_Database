@@ -10,10 +10,6 @@ exports.intro = (req, res) => {
 
 //renders the interactive map page
 exports.loadAllSpecies = (req, res) => {
-    function replacer(key, value) {
-        return value.replace(/[^\w\s]/gi, '');
-      }
-
     axios.get(`http://localhost:4747/api/v1/species`)
         .then((response) => {
             //console.log(response.data)
@@ -30,9 +26,7 @@ exports.loadSpecies = (req, res) => {
     const getEpisodes = axios.get(`http://localhost:4747/api/v1/episodes/${req.params.speciesName}`)
     Promise.all([getSpecies, getEpisodes])
         .then((response) => {
-            //console.log(response[0].data)
-            //console.log(response[1].data)
-            res.render('species_info', { episodes: response[1].data, species: response[0].data})
+            res.render('species_info', { episodes: response[1].data, species: response[0].data, speciesName: req.params.speciesName})
         })
         .catch(err => {
             res.send(err)

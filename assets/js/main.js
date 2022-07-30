@@ -21,20 +21,35 @@ $(document).ready(function() {
 });
 
 //CAROUSEL
-let slideIndex = 1;
-showSlides(slideIndex);
+
+function getSlideNumber() {
+  let slides = document.getElementsByClassName("mySlides");
+  console.log(document.querySelectorAll('.mySlides .numbertext #first-number'))
+  for (let i = 0; i < slides.length; i++) {
+    if (slides[i].style.display = "block") {
+      return document.querySelectorAll('.mySlides .numberText #first-number').innerText
+    }
+  }
+  return 1
+}
+
+showSlides(1);
 
 // Next/previous controls
 function plusSlides(n) {
+  let slideIndex = getSlideNumber()
   showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
+  let slideIndex = getSlideNumber()
   showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
+  let slideIndex = getSlideNumber()
+  console.log("SHOW SLIDES")
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
