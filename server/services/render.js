@@ -20,6 +20,17 @@ exports.loadAllSpecies = (req, res) => {
         })
 }
 
+//renders the species list page
+exports.loadSpeciesList = (req, res) => {
+    axios.get(`http://localhost:4747/api/v1/species`)
+        .then((response) => {
+            res.render('species_list', { species: response.data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+}
+
 //renders the species specific page
 exports.loadSpecies = (req, res) => {
     const getSpecies = axios.get(`http://localhost:4747/api/v1/species/${req.params.speciesName}`)
@@ -35,6 +46,12 @@ exports.loadSpecies = (req, res) => {
 
 //renders the add an episode form page
 exports.addEpisode = (req, res) => {
-    res.render('add_encounter', {encounter: req.params.speciesName})
+    axios.get(`http://localhost:4747/api/v1/species`)
+    .then((response) => {
+        let names = response.data.map((alien) => {
+            return alien.name
+        })
+        res.render('add_encounter', {encounter: req.params.speciesName, alienNames: names})
+    })
 }
 

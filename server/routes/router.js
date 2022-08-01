@@ -14,7 +14,10 @@ route.get('/map', services.loadAllSpecies)
 //API GET to load all species data into map page
 route.get('/api/v1/species', controller.loadAllSpecies)
 
-
+//Route to RENDER list page
+route.get('/list', services.loadSpeciesList)
+//API GET to load all species data into list page
+route.get('/api/v1/species', controller.loadSpeciesList)
 
 //Route to RENDER species info page, takes in species name
 route.get('/species/:speciesName', services.loadSpecies)
@@ -29,7 +32,8 @@ route.get('/api/v1/episodes/:speciesName', controller.loadEpisodes)
 
 //Route to RENDER add an episode page
 route.get('/encounter/:speciesName', services.addEpisode)
+route.get('/encounter', services.addEpisode)
 //API POST to add an episode to the database
-route.post('/api/v1/episodes/:speciesName', store.single('file'), controller.addEpisode)
+route.post('/api/v1/episodes', store.single('file'), controller.addEpisode)
 
 module.exports = route

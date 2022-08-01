@@ -67,7 +67,7 @@ let episodeSchema = new mongoose.Schema({
         }, 
         imageBase64: {
             type: String, 
-            require: true
+            //require: true
         }
     }
 })
