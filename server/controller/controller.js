@@ -6,8 +6,21 @@ const fs = require('fs')
 exports.loadAllSpecies = (req, res) => {
     species.find()
         .then(aliens => {
-            for (let i = 0; i < aliens.length; i++) {
-            }
+            // for (let i = 0; i < aliens.length; i++) {
+            // }
+            res.send(aliens)
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || "Error while retrieving species information."
+            })
+        })
+}
+
+//API GET to load all species data into list page
+exports.loadSpeciesList = (req, res) => {
+    species.find()
+        .then(aliens => {
             res.send(aliens)
         })
         .catch(err => {
@@ -65,13 +78,19 @@ exports.loadEpisodes = (req, res) => {
 exports.addEpisode = (req, res) => {
     //need to validate request
     if(!req.body){
-        res.status(400).send({ message : "Species upload must contain data."})
+        res.status(400).send({ message : "Encounter upload must contain data."})
         return
     }
 
     const image = req.file
     let img = fs.readFileSync(image.path)
     encode_image = img.toString('base64')
+
+    fs.unlink(image.path, (err) => {
+        if (err) {
+            console.log(err)
+        }
+    })
 
     //new episode
     const episode = new encounter({

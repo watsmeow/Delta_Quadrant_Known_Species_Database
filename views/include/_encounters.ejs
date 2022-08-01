@@ -1,33 +1,33 @@
-
-
-<div class="lcars-text-bar">
-    <span>Encounters</span>
-</div>
-
+<div class="lcars-text-bar"> <span>Encounters</span> </div>
 <div id="horizontal-container">
-<div class="episodes-container">
- 
-    <% for (let i = 0; i <episodes.length; i++ ) { %>
-      <% let picture = 'data:' + episodes[i].image.contentType + ';base64,' + episodes[i].image.imageBase64 %>
-      <div class="episode-list">
-        <h4><%= i + 1 %> / <%= episodes.length %> recorded in database</h4>
-        <h3 class="episode-title">"<%= episodes[i].title %>"</h3>
-        <img src="<%= picture %>" id="episode-image">
-        <ul>
-          <li><p>Year <%= episodes[i].season %> into Delta Quadrant voyage</p></li>
-          <li><p>Encounter ID Number: <%= episodes[i].episodeNumber %></p></li>
-          <li><p>Summary: <%= episodes[i].summary %></p></li>
-        </ul>
-      </div>
-
-    <% } %>
-  </div>
-  <div class="buttons">
-    <a href="/encounter/<%= speciesName %>" class="bluey two-rows">Add Encounter<br>to Database</a>
+	<div class="episodes-container">
+		<% for (let i = 0; i <episodes.length; i++ ) { %>
+			<% let picture = 'data:' + episodes[i].image.contentType + ';base64,' + episodes[i].image.imageBase64 %>
+				<div class="episode-list">
+					<h4><%= i + 1 %> / <%= episodes.length %> recorded in database</h4>
+					<h3 class="episode-title">"<%= episodes[i].title %>"</h3> <img src="<%= picture %>" id="episode-image" class="border">
+					<ul>
+						<li>
+							<p>Year
+								<%= episodes[i].season %> into Delta Quadrant voyage</p>
+						</li>
+						<li>
+							<p>Encounter ID:
+								<%= episodes[i].episodeNumber %>
+							</p>
+						</li>
+						<li>
+							<p>Summary:
+								<%= episodes[i].summary %>
+							</p>
+						</li>
+					</ul>
+				</div>
+				<% } %>
+	</div>
+	<div class="centered-button">
+		<div class="buttons"> <a href="/encounter/<%= speciesName %>" class="sunflower two-rows">Add Encounter<br>to Database</a> </div>
+		<div class="buttons"><a class="bluey" href="/map">Return to Map</a></div>
+	</div>
+	<div class="buttons"> </div>
 </div>
-</div>
-
-<!-- Slideshow container -->
-
-
-

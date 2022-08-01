@@ -1,0 +1,22 @@
+<div class="lcars-text-bar"> <span>Full List of Delta Quadrant Species</span> </div>
+
+<div class="info-container">
+    <% species.sort(function(a, b) {
+        let alpha = a.name;
+        let beta = b.name;
+        return (beta > alpha) ? -1 : (alpha > beta) ? 1 : 0
+    }) %>
+    <% for (let i = 0; i <species.length; i++ ) { %>
+        <% let picture = 'data:' + species[i].image.contentType + ';base64,' + species[i].image.imageBase64 %>
+        <ul class="species-full-list">
+            <li>
+                <div class="full-list-entry">
+                    <a href="/species/<%= species[i].name %>">             
+                        <img id="list-image" class="border" src="<%= picture %>" alt="">
+                        <p><%= species[i].name %></p>
+                    </a>  
+                </div>
+            </li>
+        </ul>
+    <% } %>
+</div>

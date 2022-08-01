@@ -1,52 +1,32 @@
 <!-- Include header -->
 	<%- include('include/_header') %>
 <!-- /Include header -->
-
-			<!-- Species information -->
-			<div class="info-container">
-				<div class="lcars-text-bar">
-					<span>Species</span>
-				</div>
-				<h2 id="species-name"><%= species[0].name %></h2>
-
-				<% let speciesPicture = 'data:' + species[0].image.contentType + ';base64,' + species[0].image.imageBase64 %>
-
-				<div class="lcars-text-bar">
-					<span>Image</span>
-				</div>
-
-				<div class="centered-picture">
-					<img src="<%= speciesPicture %>" alt="species-image" id="species-image">
-				</div>
-
-				<div class="lcars-text-bar">
-					<span>Homeworld</span>			
-				</div>
-				<p id="homeworld" class="info-text"><%= species[0].homeworld %></p>
-
-				<div class="lcars-text-bar">
-					<span>Biology</span>
-				</div>
-				<p id="biology" class="info-text"><%= species[0].biology %></p>
-
-				<div class="lcars-text-bar">
-					<span>Culture</span>
-				</div>
-				<p id="culture" class="info-text"><%= species[0].culture %></p>
-
-				<div class="lcars-text-bar">
-					<span>Technology</span>
-				</div>
-				<p id="technology" class="info-text"><%= species[0].technology %></p>
-
-				<!-- Include episodes -->
-					<%- include('include/_encounters') %>
-				<!-- /Include episodes -->
-			</div>
-
-			
-			 <!-- End content area. -->
-
+<!-- Species information -->
+	<div class="info-container">
+		<% let speciesPicture = 'data:' + species[0].image.contentType + ';base64,' + species[0].image.imageBase64 %>
+			<div class="lcars-text-bar"> <span><%= species[0].name %></span> </div>
+			<div class="centered-picture"> <img src="<%= speciesPicture %>" alt="species-image" id="species-image" class="border"> </div>
+			<div class="lcars-text-bar"> <span>Homeworld</span> </div>
+			<p id="homeworld" class="info-text">
+				<%= species[0].homeworld %>
+			</p>
+			<div class="lcars-text-bar"> <span>Biology</span> </div>
+			<p id="biology" class="info-text">
+				<%= species[0].biology %>
+			</p>
+			<div class="lcars-text-bar"> <span>Culture</span> </div>
+			<p id="culture" class="info-text">
+				<%= species[0].culture %>
+			</p>
+			<div class="lcars-text-bar"> <span>Technology</span> </div>
+			<p id="technology" class="info-text">
+				<%= species[0].technology %>
+			</p>
+			<!-- Include episodes -->
+				<%- include('include/_encounters') %>
+			<!-- /Include episodes -->
+	</div>
+<!-- End content area. -->
 <!-- Include footer -->
 	<%- include('include/_footer') %>
 <!-- /Include footer -->
