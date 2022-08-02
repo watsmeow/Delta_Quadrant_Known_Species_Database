@@ -40,7 +40,7 @@ let episodeSchema = new mongoose.Schema({
     title: {
         type: String, 
         require: true,
-        unique: true
+        //unique: true
     },
     season: {
         type: Number, 
@@ -48,7 +48,7 @@ let episodeSchema = new mongoose.Schema({
     },
     episodeNumber: {
         type: Number, 
-        //require: true,
+        require: true,
     },
     summary: {
         type: String, 
