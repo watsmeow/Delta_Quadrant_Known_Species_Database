@@ -113,6 +113,7 @@ exports.addEpisode = (req, res) => {
             res.redirect(`/encounter/${req.body.speciesName}`)
         })
         .catch(err => {
+            console.log(err)
             res.status(500).send({
                 message : err.message || "Error, unable to comply."
         })
