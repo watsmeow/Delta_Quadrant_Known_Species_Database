@@ -2256,12 +2256,12 @@ img {
 input[type=text], 
 input[type=number], 
 select {
-	padding: 0 .5rem .25rem 0.5rem;
+	padding: 0 .5rem .15rem 0.5rem;
 	height: 32px;
 	width: 75%;
 	border-radius: 14px;
 	border: none;
-	font-size: 1rem;
+	font-size: .75rem;
 	font-family: "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;
 	color: #BD82F7;
 }
@@ -2269,6 +2269,10 @@ select {
 select {
 	width: 10%;
 	color: #000;
+}
+
+form #name {
+  width: 20%;
 }
 
 #file {
@@ -2353,7 +2357,7 @@ select:focus {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	font-size: 1vw;
+	font-size: .65rem;
 	padding: 1%;
 	color: #F5F6FA;
 	border-radius: 50%;
@@ -2463,9 +2467,18 @@ select:focus {
 
 #eightfourseventwo {
 	top: 13%;
-	right: 25%;
+	right: 23%;
 	z-index: 1;
 }
+
+/*vori*/
+
+#vori {
+	top: 15%;
+	right: 32%;
+	z-index: 1;
+}
+
 
 /*Vaadwaur*/
 
@@ -2589,41 +2602,10 @@ select:focus {
 	color: #000;
 }
 
-/*Vori*/
-
-#vori {
-	top: 18%;
-	right: 23%;
-	width: 3%;
-	height: 3%;
-	background: rgba(142, 86, 245, 0.8);
-}
-
-#vori:hover {
-	background-color: rgba(245, 246, 250, 0.8);
-	box-shadow: -1px 3px 26px 5px rgba(245, 246, 250, .6);
-	color: #000;
-}
-/*Kradin*/  
-
-#kradin {
-	top: 20%;
-	right: 22%;
-	width: 3%;
-	height: 3%;
-	background: rgba(192, 144, 248, 0.8);
-}
-
-#kradin:hover {
-	background-color: rgba(245, 246, 250, 0.8);
-	box-shadow: -1px 3px 26px 5px rgba(245, 246, 250, .6);
-	color: #000;
-}
-
 /*Bomar*/
 
 #bomar {
-	top: 15%;
+	top: 10%;
 	right: 28%;
 	width: 5%;
 	height: 5%;
@@ -2636,11 +2618,27 @@ select:focus {
 	color: #000;
 }
 
+/*Sakari*/
+
+#sakari {
+	top: 15%;
+	right: 23%;
+	width: 3%;
+	height: 3%;
+	background: rgba(227, 126, 49, 0.8);
+}
+
+#sakari:hover {
+	background-color: rgba(245, 246, 250, 0.8);
+	box-shadow: -1px 3px 26px 5px rgba(245, 246, 250, .6);
+	color: #000;
+}
+
 /*Zahl*/
 
 #zahl {
 	top: 25%;
-	right: 15%;
+	right: 35%;
 	width: 15%;
 	height: 15%;
 	background: rgba(194, 81, 74, 0.8);
@@ -2655,10 +2653,10 @@ select:focus {
 /*Krenim*/
 
 #krenim {
-	top: 20%;
-	right: 30%;
-	width: 18%;
-	height: 18%;
+	top: 17%;
+	right: 15%;
+	width: 22%;
+	height: 22%;
 	background: rgba(235, 174, 149, 0.8);
 }
 
@@ -2671,8 +2669,8 @@ select:focus {
 /*Rilnar*/
 
 #rilnar {
-	top: 7%;
-	right: 38%;
+	top: 12%;
+	right: 35%;
 	width: 13%;
 	height: 13%;
 	background: rgba(241, 204, 119, 0.8);
@@ -2782,7 +2780,7 @@ select:focus {
 	color: #000;
 }
 
-/*Quarran*/list
+/*Quarran*/
 
 
 #quarren {

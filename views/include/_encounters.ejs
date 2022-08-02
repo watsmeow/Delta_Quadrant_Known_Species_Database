@@ -5,7 +5,10 @@
 			<% let picture = 'data:' + episodes[i].image.contentType + ';base64,' + episodes[i].image.imageBase64 %>
 				<div class="episode-list">
 					<h4><%= i + 1 %> / <%= episodes.length %> recorded in database</h4>
-					<h3 class="episode-title">"<%= episodes[i].title %>"</h3> <img src="<%= picture %>" id="episode-image" class="border">
+					<h3 class="episode-title">"<%= episodes[i].title %>"</h3>
+					<div class="centered-picture">
+						<img src="<%= picture %>" id="episode-image" class="border">
+					</div>
 					<ul>
 						<li>
 							<p>Year
