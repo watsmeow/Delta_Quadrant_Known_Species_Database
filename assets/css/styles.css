@@ -2156,14 +2156,47 @@ img {
 	margin: 0 2rem 0 1rem;
 }
 
-@media only screen and (max-width: 600px) {
-	.info-container {
-		width: 375px;
-	}
+/*MEDIA FOR GENERAL/GLOBAL */
 
-	#species-image {
-		width: 300px;
-	}
+@media only screen and (max-width: 280px) {
+  .info-container {
+    max-width: 190px;
+    margin-left: 0;
+  }
+  #entry-button1,
+  #entry-button2 {
+    height: 30px;
+    width: 100px;
+    font-size: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 285px) and (max-width: 415px) {
+  .info-container {
+    max-width: 275px;
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 540px) {
+  .info-container {
+    max-width: 350px;
+    margin-left: 10px;
+  }
+}
+
+
+@media (min-width: 560px) and (max-width: 912px) {
+  .info-container {
+    max-width: 575px;
+  }
+}
+
+@media (min-width: 915px) and (max-width: 1280px) {
+  .info-container {
+    max-width: 90%;
+  }
 }
 
 .info-text {
@@ -2186,6 +2219,18 @@ img {
 	max-width: 600px;
 }
 
+@media only screen and (max-width: 280px) {
+	#species-image {
+    max-width: 150px;
+	}
+}
+
+@media only screen and (max-width: 775px) {
+	#species-image {
+    max-width: 250px;
+	}
+}
+
 /*CAROUSEL*/
 #horizontal-container {
 	display: flex;
@@ -2202,7 +2247,8 @@ img {
 }
 
 .episode-list {
-	min-width: 700px;
+	width: 700px;
+  margin-right: 10%;
 	padding: 0 2rem;
 }
 
@@ -2231,18 +2277,87 @@ img {
 	color: #EAAD59;
 }
 
-@media only screen and (max-width: 600px) {
-	.episodes-container {
-		width: 375px;
-	}
+/*MEDIA RESPONSIVE CAROUSEL */
 
-	.episode-list {
-		min-width: 375px;
-	}
+@media only screen and (max-width: 280px) {
+  #horizontal-container,
+  .episodes-container,
+  .episode-list,
+  #carousel-pic {
+    max-width: 200px;
+  }
+  #carousel-list {
+    max-width: 150px;
+  }
+  #episode-image {
+    max-width: 100px;
+  }
+  #encounter-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
-	#episode-image {
-		width: 300px;
-	}
+@media (min-width: 285px) and (max-width: 414px) {
+  #horizontal-container,
+  .episodes-container,
+  .episode-list,
+  #carousel-pic {
+    max-width: 300px;
+  }
+  #carousel-list {
+    max-width: 250px;
+  }
+  #episode-image {
+    max-width: 200px;
+  }
+  #encounter-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 540px) {
+  #horizontal-container,
+  .episodes-container,
+  .episode-list,
+  #carousel-pic {
+    max-width: 375px;
+  }
+  #carousel-list {
+    max-width: 200px;
+  }
+  #episode-image {
+    max-width: 250px;
+  }
+  #encounter-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+@media (min-width: 560px) and (max-width: 912px) {
+  #horizontal-container,
+  .episodes-container,
+  .episode-list,
+  #carousel-pic {
+    max-width: 575px;
+  }
+  #carousel-list {
+    max-width: 500px;
+  }
+  #episode-image {
+    max-width: 450px;
+  }
+  #encounter-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 915px) and (max-width: 1280px) {
+
 }
 
 /*ADD ENCOUNTER FORM*/
@@ -2338,12 +2453,6 @@ select:focus {
 	max-height: 1050px;
 }
 
-@media only screen and (max-width: 600px) {
-	#container {
-		width: 400px;
-		height: 400px;
-	}
-}
 
 /* Territories */
 
@@ -2369,13 +2478,6 @@ select:focus {
 	text-transform: uppercase;
 }
 
-@media only screen and (max-width: 600px) {
-	.map-button {
-		font-size: 2vw;
-	}
-}
-
-
 /*darkens the background when popup is open*/
 .overlay {
 	position: fixed;
@@ -2398,7 +2500,7 @@ select:focus {
 /* Popup */
 
 .popup {
-	margin: 2% auto;
+	margin: 5% auto;
 	padding: 2%;
 	background: black;
 	border-radius: 14px;
@@ -2406,6 +2508,7 @@ select:focus {
 	height: fit-content;
 	position: relative;
 	transition: all 5s ease-in-out;
+  max-width: 90%;
 }
 
 .pics > .caption {
@@ -2415,6 +2518,132 @@ select:focus {
 #popUpImage {
 	min-width: 300px;
 	max-width: 300px;
+}
+
+/*MEDIA RESPONSIVE MAP*/
+
+@media only screen and (max-width: 280px) {
+  #container {
+    max-width: 190px;
+    max-height: 190px;
+  }
+  .map-button {
+    font-size: 4px;
+  }
+  #popUpImage {
+    min-width: 100px;
+    max-width: 150px;
+  }
+  .pics > .caption {
+    font-size: 12px;
+  }
+  #pop-up-buttons {
+    margin: 10px 0 0 0;
+  }
+  #popUpLink,
+  #returnLink {
+    height: 30px;
+    width: 100px;
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 285px) and (max-width: 414px) {
+  #container {
+    max-width: 275px;
+    max-height: 275px;
+  }
+  .map-button {
+    font-size: 5px;
+  }
+  #popUpImage {
+    min-width: 100px;
+    max-width: 150px;
+  }
+  .pics > .caption {
+    font-size: 12px;
+  }
+  #pop-up-buttons {
+    margin: 10px 0 0 0;
+  }
+  #popUpLink,
+  #returnLink {
+    height: 30px;
+    width: 100px;
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 540px) {
+  #container {
+    width: 375px;
+    height: 375px;
+  }
+  .map-button {
+    font-size: 5px;
+  }
+  #popUpImage {
+    min-width: 200px;
+    max-width: 250px;
+  }
+  .pics > .caption {
+    font-size: 12px;
+  }
+  #pop-up-buttons {
+    margin: 10px 0 0 0;
+  }
+  #popUpLink,
+  #returnLink {
+    height: 30px;
+    width: 100px;
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 912px) {
+  #container {
+    width: 575px;
+    height: 575px;
+  }
+  .map-button {
+    font-size: 12px;
+  }
+  #popUpImage {
+    min-width: 200px;
+    max-width: 250px;
+  }
+  .pics > .caption {
+    font-size: 12px;
+  }
+  #pop-up-buttons {
+    margin: 10px 0 0 0;
+  }
+  #popUpLink,
+  #returnLink {
+    height: 30px;
+    width: 100px;
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 915px) and (max-width: 1280px) {
+  #container {
+    width: 750px;
+    height: 750px;
+  }
+  .map-button {
+    font-size: 12px;
+  }
+  #popUpImage {
+    min-width: 200px;
+    max-width: 250px;
+  }
+  .pics > .caption {
+    font-size: 12px;
+  }
+  #pop-up-buttons {
+    margin: 10px 0 0 0;
+  }
 }
 
 
@@ -2813,6 +3042,34 @@ select:focus {
   border-radius: 14px;
 }
 
-.species-full-list a img {
+#list-image {
   margin: 0 3rem 0 0;
+}
+
+@media only screen and (max-width: 280px) {
+  .species-full-list {
+    padding-left: 15px;
+  }
+	.full-list-entry {
+		max-width: 235px;
+    max-height: 50px;
+	}
+
+	#list-image {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+  .species-full-list {
+    padding-left: 15px;
+  }
+	.full-list-entry {
+		max-width: 235px;
+	}
+
+	#list-image {
+		width: 150px;
+    margin-right: 15px;
+	}
 }

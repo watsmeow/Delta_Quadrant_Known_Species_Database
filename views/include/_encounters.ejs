@@ -6,10 +6,10 @@
 				<div class="episode-list">
 					<h4><%= i + 1 %> / <%= episodes.length %> recorded in database</h4>
 					<h3 class="episode-title">"<%= episodes[i].title %>"</h3>
-					<div class="centered-picture">
+					<div class="centered-picture" id="carousel-pic">
 						<img src="<%= picture %>" id="episode-image" class="border">
 					</div>
-					<ul>
+					<ul id="carousel-list">
 						<li>
 							<p>Year
 								<%= episodes[i].season %> into Delta Quadrant voyage</p>
@@ -28,7 +28,7 @@
 				</div>
 				<% } %>
 	</div>
-	<div class="centered-button">
+	<div class="centered-button" id="encounter-buttons">
 		<div class="buttons"> <a href="/encounter/<%= speciesName %>" class="sunflower two-rows">Add Encounter<br>to Database</a> </div>
 		<div class="buttons"><a class="bluey" href="/map">Return to Map</a></div>
 	</div>
