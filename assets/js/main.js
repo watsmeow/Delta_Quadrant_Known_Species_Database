@@ -1,5 +1,3 @@
-const { species, encounter } = require("../../server/model/model");
-
 document.addEventListener("touchstart", function() {},false);
 
 $(window).scroll(function() {
