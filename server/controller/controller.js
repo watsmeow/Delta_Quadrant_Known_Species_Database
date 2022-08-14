@@ -3,18 +3,24 @@ const {encounter, species}  = require('../model/model')
 const fs = require('fs')
 
 //API GET to load all species data into map page
-exports.loadAllSpecies = (req, res) => {
-    species.find()
-        .then(aliens => {
-            // for (let i = 0; i < aliens.length; i++) {
-            // }
-            res.send(aliens)
+exports.loadAllSpecies = async (req, res) => {
+    try {
+        let aliens = await species.find()
+        res.send(aliens)
+    } catch (error) {
+        res.status(500).send({
+            message: error.message || "Error while retrieving species information."
         })
-        .catch(err => {
-            res.status(500).send({
-                message: err.message || "Error while retrieving species information."
-            })
-        })
+    }
+    // species.find()
+    //     .then(aliens => {
+    //         res.send(aliens)
+    //     })
+    //     .catch(err => {
+    //         res.status(500).send({
+    //             message: err.message || "Error while retrieving species information."
+    //         })
+    //     })
 }
 
 //API GET to load all species data into list page

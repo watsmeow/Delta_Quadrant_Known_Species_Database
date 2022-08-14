@@ -1,6 +1,7 @@
 const axios = require('axios')
 const { promiseImpl } = require('ejs')
 const express = require('express')
+const { species } = require('../model/model')
 
 
 //renders intro page
@@ -9,49 +10,54 @@ exports.intro = (req, res) => {
 }
 
 //renders the interactive map page
-exports.loadAllSpecies = (req, res) => {
-    axios.get(`${process.env.API_URL}/api/v1/species`)
-        .then((response) => {
-            //console.log(response.data)
-            res.render('database_map', { species: JSON.stringify(response.data).replace(/'/g, '\\u0027') })
-        })
-        .catch(err => {
-            res.send(err)
-        })
-}
+exports.loadAllSpecies = async (req, res) => {
+    try {
+        let speciesResponse = await axios.get(`${process.env.API_URL}/api/v1/species`)
+        res.render('database_map', { species: JSON.stringify(speciesResponse.data).replace(/'/g, '\\u0027') })
+    } catch (error) {
+        console.error(error)
+        res.render('error_page')
+    }
+};
 
 //renders the species list page
-exports.loadSpeciesList = (req, res) => {
-    axios.get(`${process.env.API_URL}/api/v1/species`)
-        .then((response) => {
-            res.render('species_list', { species: response.data })
-        })
-        .catch(err => {
-            res.send(err)
-        })
-}
+exports.loadSpeciesList = async (req, res) => {
+    try {
+        let response = await axios.get(`${process.env.API_URL}/api/v1/species`)
+        res.render('species_list', { species: response.data })
+    } catch (error) {
+        console.error(error)
+        res.render('error_page')
+    }
+};
 
 //renders the species specific page
-exports.loadSpecies = (req, res) => {
-    const getSpecies = axios.get(`${process.env.API_URL}/api/v1/species/${req.params.speciesName}`)
-    const getEpisodes = axios.get(`${process.env.API_URL}/api/v1/episodes/${req.params.speciesName}`)
-    Promise.all([getSpecies, getEpisodes])
-        .then((response) => {
-            res.render('species_info', { episodes: response[1].data, species: response[0].data, speciesName: req.params.speciesName})
-        })
-        .catch(err => {
-            res.send(err)
-        })
-}
+exports.loadSpecies = async (req, res) => {
+    try {
+        const getSpecies = await axios.get(`${process.env.API_URL}/api/v1/species/${req.params.speciesName}`)
+        console.log(getSpecies)
+        const getEpisodes = await axios.get(`${process.env.API_URL}/api/v1/episodes/${req.params.speciesName}`)
+        if (getSpecies.data.length == 0) {
+            res.render('error_page')
+        }
+        res.render('species_info', { episodes: getEpisodes.data, species: getSpecies.data, speciesName: req.params.speciesName})
+    } catch (error) {
+        console.error(err)
+        res.render('error_page')
+    }
+};
 
 //renders the add an episode form page
-exports.addEpisode = (req, res) => {
-    axios.get(`${process.env.API_URL}/api/v1/species`)
-    .then((response) => {
+exports.addEpisode = async (req, res) => {
+    try {
+        let response = await axios.get(`${process.env.API_URL}/api/v1/species`)
         let names = response.data.map((alien) => {
             return alien.name
         })
         res.render('add_encounter', {encounter: req.params.speciesName, alienNames: names})
-    })
-}
+    } catch (error) {
+        console.error(error)
+        res.render('error_page')
+    }
+};
 
