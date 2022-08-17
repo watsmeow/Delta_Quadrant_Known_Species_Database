@@ -12,28 +12,18 @@ exports.loadAllSpecies = async (req, res) => {
             message: error.message || "Error while retrieving species information."
         })
     }
-    // species.find()
-    //     .then(aliens => {
-    //         res.send(aliens)
-    //     })
-    //     .catch(err => {
-    //         res.status(500).send({
-    //             message: err.message || "Error while retrieving species information."
-    //         })
-    //     })
 }
 
 //API GET to load all species data into list page
-exports.loadSpeciesList = (req, res) => {
-    species.find()
-        .then(aliens => {
-            res.send(aliens)
+exports.loadSpeciesList = async (req, res) => {
+    try {
+        let aliens = await species.find()
+        res.send(aliens)
+    } catch (error) {
+        res.status(500).send({
+            message: err.message || "Error while retrieving species information."
         })
-        .catch(err => {
-            res.status(500).send({
-                message: err.message || "Error while retrieving species information."
-            })
-        })
+    }
 }
 
 //API GET to load species data into species page by name
