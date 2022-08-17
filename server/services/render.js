@@ -7,7 +7,7 @@ const { species } = require('../model/model')
 //renders intro page
 exports.intro = (req, res) => {
     res.render('index')
-}
+};
 
 //renders the interactive map page
 exports.loadAllSpecies = async (req, res) => {
