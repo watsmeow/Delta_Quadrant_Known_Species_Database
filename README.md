@@ -1,5 +1,5 @@
 # Delta_Quadrant_Known_Species_Database
-A full stack CRUD application made for hardcore trekkies and general fans with an interactive map and corresponding database.
+A full stack CRUD application made for hardcore trekkies and general fans. Uses an interactive map that interacts with a corresponding database to serve up everything you need to know for Delta Quadrant exploration.
 
 **View here:** https://delta-quadrant-species.herokuapp.com/
 
